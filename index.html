@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Atividade 02 - Seletor de cor</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <div class="min-vh-100 d-flex flex-column"> 
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <button
+      type="button" 
+      class="navbar-toggler"  
+      data-toggle="collapse" 
+      data-target="#navbarPrincipal">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <a
+        href="#"
+        class="navbar-brand">
+        ColorPicker!
+      </a>
+      <div id="navbarPrincipal" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a href="#" class="nav-link">Seletor de cor</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contador</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Cronômetro</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link font-italic">To-do-list</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contagem regressiva</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/popper.js/dist/popper.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/main.js"></script>
+  <main class="flex-grow-1 order-1 order-md-2">
+  <div class="card-body text-center d-flex justify-content-center align-items-center flex-column" id="fundo">
+    <h1 class="fs-2 fw-bold">Seletor de cor</h1>
+    <h2 class="fs-4">Clique na cor do campo abaixo para obter e selecionar uma cor de fundo!</h2>
+    </div>
+
+    <div class="input input-sm mb-3 text-center">
+      <input type="text" placeholder="Nome ou código da cor" id="hex" class="text-center">    
+     <input type="color" id="color"> 
+  
+     <div class="text-center text-dark">Clique na cor para visualizar o resultado.
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+      <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+    </svg></div>
+  </main>
+  </div>
+
+
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  
+  <script>
+    let colorInput = document.querySelector('#color');
+  let hexInput = document.querySelector('#hex');
+  colorInput.addEventListener('input', () =>{
+      let color = colorInput.value;
+      hexInput.value = color;
+      document.body.style.backgroundColor = color;
+
+      //para modificar apenas o título principal:
+      //document.querySelector('h1').style.color = color;
+  });
+  </script>
+
+</body>
+<footer class="font-monospace text-center">Página criada por Gabriela Silveira </footer>
+</html>
